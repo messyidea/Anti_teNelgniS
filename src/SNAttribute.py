@@ -4,6 +4,7 @@ import time
 import struct
 import socket
 import hashlib
+import SNConstants
 
 
 class SNAttribute(object):
@@ -163,8 +164,9 @@ class KEEPALIVE_DATA(SNAttribute):
                                              parent_id=0x14, type_id=0x0, value_type=0x2, value=keepalive_data)
 
     @classmethod
-    def get_keepalive_data(cls, timestamp=int(time.time())):
-        salt = cls.last_data or 'pjff'
+    def get_keepalive_data(cls, timestamp=None):
+        timestamp = timestamp or int(time.time())
+        salt = cls.last_data or SNConstants.HBDefault['DEFAULT_HB_DATA']
 
         m = hashlib.md5()
         m.update(struct.pack('>I', timestamp))

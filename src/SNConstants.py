@@ -17,11 +17,12 @@ HNSNAccount = {
 }
 
 SNClient = {
-    'CLIENT_VERSION': '1.2.18.28',
+    'CLIENT_VERSION': '1.2.22.36',
     'CLIENT_TYPE': base64.decodestring('c2luZ2xlTmV0')
 }
 
 HBDefault = {
+    'DEFAULT_HB_DATA': base64.decodestring('bGx3bA=='),
     'SIG_SALT': base64.decodestring('TExXTFhBX1RQU0hBUkVTRUNSRVQ='),
     'SIG_SALT_MAC': base64.decodestring('TExXTFhB'),
     'ADAPTER_INFO': 'AMD PCNET Family PCI Ethernet Adapter - 数据包计划程序微型端口',
